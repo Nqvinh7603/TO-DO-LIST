@@ -6,6 +6,9 @@ class Model {
 
   handleTodoChange(handler) {
     this.todoListChange = handler;
+    // handleTodoChange = (todos) => {
+    //   this.view.displayTodos(todos);
+    // };
   }
 
   _reload(todos) {

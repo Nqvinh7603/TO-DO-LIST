@@ -6,6 +6,9 @@ class Model {
 
   handleTodoChange(handler) {
     this.todoListChange = handler;
+    // handleTodoChange = (todos) => {
+    //   this.view.displayTodos(todos);
+    // };
   }
 
   _reload(todos) {
@@ -36,12 +39,12 @@ class View {
 
     this.input = this.createElement("input", "todo-input");
     this.input.type = "text";
-    this.input.placeholder = "Nhập ghi chú của bạn";
+    this.input.placeholder = "Enter your task";
     this.input.name = "todo";
 
     this.submit = this.createElement("button", "todo-submit");
     this.submit.type = "submit";
-    this.submit.textContent = "THÊM";
+    this.submit.textContent = "Add";
 
     this.form.append(this.input, this.submit);
 
@@ -115,6 +118,7 @@ class Controller {
   constructor(model, view) {
     this.model = model;
     this.view = view;
+    // this.model.addTodo("Tran anh tuan");
     // this.view.displayTodos(this.model.todos);
     this.model.handleTodoChange(this.handleTodoChange);
     this.view.viewAddTodo(this.handleAddTodo);
